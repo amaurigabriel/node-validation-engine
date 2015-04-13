@@ -1,0 +1,19 @@
+{
+  "name" : "validator-engine",
+  "version" : "0.0.1",
+  "description" : "A promise-based validator engine for Node.js.",
+  "author" : "Amauri Gabriel <contato@amauri.eng.br>",
+  "contributors" : [{
+    "name" : "Amauri Gabriel",
+    "email" : "contato@amauri.eng.br"
+  }],
+  "main" : "validator-engine.js",
+  "keywords" :[
+    "validation"
+  ],
+  "dependencies" : {
+    "bluebird" : "2.9.x",
+    "async" : "0.9.x",
+    "sprintf" : "0.1.x"
+  }
+}
