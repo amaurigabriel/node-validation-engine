@@ -15,5 +15,12 @@
     "bluebird" : "2.9.x",
     "async" : "0.9.x",
     "sprintf" : "0.1.x"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/amaurigabriel/node-validator-engine"
+  },
+  "bugs" : {
+    "url" : "https://github.com/amaurigabriel/node-validator-engine/issues"
   }
 }
