@@ -19,7 +19,7 @@ It is my first module, so contributions and hints are very welcome!
 
 # Configuring Validation Rules for a Model
 
-You can use directy the `rules` property of the `validator` object:
+You can use directly the `rules` property of the `validator` object:
   
   ```js
     var validator = require('validator-engine');
@@ -50,7 +50,7 @@ You can use directy the `rules` property of the `validator` object:
     ];
   ```
   
-  Please, note that the only default validators at the moment are `required` and `maxLength'. See the next session to learn how to add custom validators.
+  Please, note that the only default validators at the moment are `required` and `maxLength`. See the next session to learn how to add custom validators.
   
 # Adding Custom Validators
   
