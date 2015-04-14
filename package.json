@@ -1,13 +1,13 @@
 {
-  "name" : "validator-engine",
+  "name" : "validation-engine",
   "version" : "0.0.1",
-  "description" : "A promise-based validator engine for Node.js.",
+  "description" : "A promise-based validation engine for Node.js.",
   "author" : "Amauri Gabriel <contato@amauri.eng.br>",
   "contributors" : [{
     "name" : "Amauri Gabriel",
     "email" : "contato@amauri.eng.br"
   }],
-  "main" : "validator-engine.js",
+  "main" : "validation-engine.js",
   "keywords" :[
     "validation"
   ],
@@ -18,9 +18,9 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/amaurigabriel/node-validator-engine"
+    "url" : "https://github.com/amaurigabriel/node-validation-engine"
   },
   "bugs" : {
-    "url" : "https://github.com/amaurigabriel/node-validator-engine/issues"
+    "url" : "https://github.com/amaurigabriel/node-validation-engine/issues"
   }
 }
