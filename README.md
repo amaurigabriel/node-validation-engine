@@ -57,10 +57,12 @@ You can use directly the `rules` property of the `validator` object:
 It is very simple to add custom validators:
 
 ```js
+  var Promise = require('bluebird');
+
   validator.addValidator('equal', function(rule, field_name, data){
     return new Promise(function(resolve, reject){
       if (data[field_name] === data[rule.fieldToCompare]) return resolve();
-      return reject(new validator.ValidatorException('error message', field_name, rule, data);
+      return reject(new validator.ValidatorException('error message', field_name, rule, data));
     });
   });
   ```
@@ -79,4 +81,30 @@ It is very simple to add custom validators:
   
 ```js
   var validator = require('../lib/myValidator');
+```
+
+# Conditional Validation
+
+You may choose to check certain validation rules only when inserting or updating data, using the `on` option in the rule
+
+```js
+  validator.rules = [
+    {
+      'field' : 'email',
+      'rules' : [{
+        'rule' : 'required',
+        'on' : 'create'
+      }]
+    }
+  ];
+```
+
+The accepted values for `on` are `create` and `update`. The module checks if the current operation is create or update looking for the
+`primary` option.
+
+If `data[validator.primary]` is present, the operation is update; otherwise, it is create. The default value for `primary` is `id`, but
+you can change it to any value you need.
+
+```js
+  validator.primary = 'email';
 ```
