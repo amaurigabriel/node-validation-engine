@@ -16,4 +16,8 @@ describe('validators', function(){
     it('should expose a validator for required', function(){
       expect(typeof validators.required).toBe('function');
     });
+
+    it('should expose a validator for regExp', function(){
+      expect(typeof validators.regExp).toBe('function');
+    });
 });
