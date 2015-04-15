@@ -1,4 +1,4 @@
-# node-validator-engine
+# node-validation-engine
 
 This is a validation engine for Node.js. It is not intended to have every possible validation rule in the core, but it is built in such a way that you can easily add external rules.
 
