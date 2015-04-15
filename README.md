@@ -58,7 +58,7 @@ You can use directly the `rules` property of the `validator` object:
     ];
   ```
   
-  **obs:** Note that the only default validators at the moment are `required` and `maxLength`. See the next session to learn how to add custom validators.
+  **obs:** Check the [core validators here](#core-validators).
   
 # Adding Custom Validators
   
@@ -116,3 +116,16 @@ you can change it to any value you need.
 ```js
   validator.primary = 'email';
 ```
+
+# Core validators
+There are some validators in the core. All the core validators accept `undefined` values, except, of course, `required`. They all have default error messages, but you are encouraged to customize them. To do it, use the `message` parameter.
+
+- `maxLength` check if `string.length` is less or equal to `length`. Parameters:
+ - `length` (*required*) - *maximum acceptable length for string.
+- `required` check if `typeof data[field_name]` is not `undefined`.
+- `alphanumeric` - check if the field has only letters and numbers. Optionally, this rule may accept whitespaces and underscores too. Parameters:
+ - `whitespace` (*default : false*) if `true`, whitespaces are allowed.
+ - `underscore` (*default : false*) if `tre`, underscores are allowed.
+- `regExp` check if the field match a regular expression. Parameters:
+ - `reg_exp` (*required*) - regular expression which the field should match.
+
