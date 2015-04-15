@@ -11,10 +11,12 @@
   "keywords" :[
     "validation"
   ],
+  "scripts" : {
+    "test" : "jasmine spec/*.spec.js"
+  },
   "dependencies" : {
     "bluebird" : "2.9.x",
-    "async" : "0.9.x",
-    "sprintf" : "0.1.x"
+    "async" : "0.9.x"
   },
   "repository" : {
     "type" : "git",

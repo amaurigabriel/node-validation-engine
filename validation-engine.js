@@ -1,19 +1,9 @@
 var Promise = require('Bluebird'),
     util = require('util');
 
-function ValidatorException(message, field, rule, data){
-    this.message = message;
-    this.field = field;
-    this.rule = rule;
-    this.data = data;
-    this.name = 'ValidatorException';
-}
-
-util.inherits(ValidatorException, Error);
-
 validator = {};
 
-validator.ValidatorException = ValidatorException;
+validator.ValidatorException = require('./lib/ValidatorException.js');
 validator.primary = 'id';
 
 validator.validate = function validatorValidate(data){
@@ -98,55 +88,8 @@ validator.validateRule = function validatorValidateRule(rule, field_name, data){
   }
 };
 
-validator.validateRequired = function validatorValidateRequired(rule, field_name, data){
-  return new Promise(function(resolve, reject){
-    if (typeof data[field_name] !== 'undefined'){
-      resolve();
-    }
-    else{
-      var message = '';
-
-      if (typeof rule.message === 'undefined'){
-        var sprintf = require('sprintf-js').sprintf;
-        message = sprintf('%s is required.', field_name);
-      }
-      else{
-        message = rule.message;
-      }
-
-      reject(new ValidatorException(message, field_name, rule, data));
-    }
-  });
-};
-
-validator.validateMaxLength = function validatorValidateMaxLength(rule, field_name, data){
-  return new Promise(function(resolve, reject){
-    if (typeof data[field_name] === 'undefined') resolve();
-
-    if (data[field_name].length <= rule.length){
-      resolve();
-    }
-    else{
-      var message = '';
-
-      if (typeof rule.message === 'undefined'){
-        var sprintf = require('sprintf-js').sprintf;
-        message = sprintf('%s - Máximo de %d caracteres.', field_name, rule.length);
-      }
-      else{
-        message = rule.message;
-      }
-
-      reject(new ValidatorException(message, field_name, rule, data));
-    }
-  });
-};
-
 validator.rules = [];
-validator.validators = {
-  'required' : validator.validateRequired,
-  'maxLength' : validator.validateMaxLength
-};
+validator.validators = require('./lib/validators.js');
 
 validator.addValidator = function validatorAddValidator(rule_name, function_handler){
   validator.validators[rule_name] = function_handler;
