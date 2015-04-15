@@ -1,6 +1,6 @@
 {
   "name" : "validation-engine",
-  "version" : "0.0.1",
+  "version" : "0.1.0",
   "description" : "A promise-based validation engine for Node.js.",
   "author" : "Amauri Gabriel <contato@amauri.eng.br>",
   "contributors" : [{
