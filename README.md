@@ -40,7 +40,7 @@ You can use directly the `rules` property of the `validator` object:
            {
             //these parameters are passed to the validator function as arguments
             'rule' : 'maxLength',
-            'length' : 20,
+            'length' : 255,
             'message' : 'Maximum of 255 characters'
           },
           'email',
