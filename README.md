@@ -6,7 +6,7 @@ The main advantage of this module is that you can asynchronously validate every 
 
 ```js
   People.prototype.save = function(data){
-    this.validate().then(function(){
+    this.validate(data).then(function(){
       //save people data
     }
     .catch(function(validation_error){
