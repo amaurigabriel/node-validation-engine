@@ -7,7 +7,10 @@ validator.ValidatorException = require('./lib/ValidatorException.js');
 validator.primary = 'id';
 
 validator.validate = function validatorValidate(data){
-  if (typeof data === 'undefined' || typeof data[this.primary] === 'undefined'){
+  if (typeof this.rules === 'undefined'){
+    return Promise.resolve();
+  }
+  else if (typeof data === 'undefined' || typeof data[this.primary] === 'undefined'){
     return this.validateOnCreate(data);
   }
   else{
@@ -20,6 +23,7 @@ validator.validateOnCreate = function validatorValidateOnCreate (data){
     self = this;
 
   return new Promise(function(resolve, reject){
+
     require('async').each(self.rules, function(field, callback){
       var rules = field.rules,
           rules_length = rules.length;

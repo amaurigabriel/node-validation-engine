@@ -17,6 +17,21 @@ describe('validation engine', function(){
       }
     ];
 
+    it('should accept data when no rules are specified', function(done){
+      validator.rules = undefined;
+      validator.validate({'foo' : '1234567890'})
+        .then(function(){
+          expect(1).toBe(1);
+          done();
+        })
+        .catch(function(err){
+          expect(1).toBe(0);
+          done();
+        })
+        .finally(done)
+        .done();
+    });
+
     it('should accept valid data', function(done){
       validator.rules = rules;
       validator.validate({'foo' : '1234567890'})
