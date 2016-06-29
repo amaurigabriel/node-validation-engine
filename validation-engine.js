@@ -86,9 +86,8 @@ validator.validateRule = function validatorValidateRule(rule, field_name, data){
   }
   else{
     return new Promise(function(resolve, reject){
-      var sprintf = require('sprintf-js').sprintf;
-      reject(new Error(sprintf('Validator for rule %s not found.', rule_name)));
-    });    
+      reject(new Error('Validator for rule ' + rule_name + ' not found.'));
+    });
   }
 };
 
