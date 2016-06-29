@@ -1,6 +1,6 @@
 {
   "name": "validation-engine",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A promise-based validation engine for Node.js.",
   "author": {
     "name": "Amauri Gabriel",
@@ -22,7 +22,7 @@
   "dependencies": {
     "async": "0.9.x",
     "bluebird": "2.9.x",
-    "jasmine" : "*"
+    "jasmine": "*"
   },
   "repository": {
     "type": "git",
