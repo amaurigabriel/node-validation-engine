@@ -120,12 +120,16 @@ you can change it to any value you need.
 # Core validators
 There are some validators in the core. All the core validators accept `undefined` values, except, of course, `required`. They all have default error messages, but you are encouraged to customize them. To do it, use the `message` parameter.
 
-- `maxLength` check if `string.length` is less or equal to `length`. Parameters:
- - `length` (*required*) - *maximum acceptable length for string.
+- `length` validate the `string.length` property. Parameters:
+  - `length` (*optional*) if set, `string.length` must match its value;
+  - `minLength` (*optional*) if set, `string.length` must be greater or equal to its value;
+  - `maxLength` (*optional*) if set, `string.length` must be less or equal to its value;
+
+ You can combine `minLength` and `maxLength` in the same rule, in such a way that `string.length` must be between `minLength` (inclusive) and `maxLenght` (inclusive).
 - `required` check if `typeof data[field_name]` is not `undefined`.
 - `alphanumeric` - check if the field has only letters and numbers. Optionally, this rule may accept whitespaces and underscores too. Parameters:
- - `whitespace` (*default : false*) if `true`, whitespaces are allowed.
- - `underscore` (*default : false*) if `tre`, underscores are allowed.
+  - `whitespace` (*default : false*) if `true`, whitespaces are allowed.
+  - `underscore` (*default : false*) if `tre`, underscores are allowed.
 - `regExp` check if the field match a regular expression. Parameters:
- - `reg_exp` (*required*) - regular expression which the field should match.
+  - `reg_exp` (*required*) - regular expression which the field should match.
 
