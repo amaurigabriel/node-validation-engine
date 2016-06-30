@@ -1,6 +1,6 @@
 {
   "name": "validation-engine",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A promise-based validation engine for Node.js.",
   "author": {
     "name": "Amauri Gabriel",
@@ -14,7 +14,8 @@
   ],
   "main": "validation-engine.js",
   "keywords": [
-    "validation"
+    "validation",
+    "promise"
   ],
   "scripts": {
     "test": "jasmine spec/*.spec.js"
@@ -31,12 +32,7 @@
   "bugs": {
     "url": "https://github.com/amaurigabriel/node-validation-engine/issues"
   },
-  "gitHead": "06865cc2ec9b65b7ec8da5f8afdfc813f2a39b63",
   "homepage": "https://github.com/amaurigabriel/node-validation-engine",
-  "_id": "validation-engine@0.2.0",
-  "_shasum": "915112c486b1b7c774f4eb02348377a7df4f6299",
-  "_from": "validation-engine@latest",
-  "_npmVersion": "1.4.28",
   "_npmUser": {
     "name": "amaurigabriel",
     "email": "contato@amauri.eng.br"
@@ -46,12 +42,5 @@
       "name": "amaurigabriel",
       "email": "contato@amauri.eng.br"
     }
-  ],
-  "dist": {
-    "shasum": "915112c486b1b7c774f4eb02348377a7df4f6299",
-    "tarball": "https://registry.npmjs.org/validation-engine/-/validation-engine-0.2.0.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/validation-engine/-/validation-engine-0.2.0.tgz",
-  "readme": "ERROR: No README data found!"
+  ]
 }
