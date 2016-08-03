@@ -1,4 +1,4 @@
-var Promise = require('Bluebird'),
+var Promise = require('bluebird'),
     util = require('util');
 
 validator = {};
